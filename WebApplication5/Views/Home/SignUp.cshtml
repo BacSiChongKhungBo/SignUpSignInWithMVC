@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Sign Up";
+}
+@*
+    gọi model để bind dữ liệu vào từ asp-for
+*@
+@model User
+<link rel="stylesheet" href="~/css/style2.css" asp-append-version="true" />
+<div class="container">
+@*
+    form sẽ có sự kiện gì? controller nào?
+    asp-controller: để gán controller vào form
+    asp-action: để gán sự kiện của controller vào form
+*@
+    <form id="signup" asp-controller="Home" asp-action="SignUp">
+
+        <div class="header">
+
+            <h3>Sign Up</h3>
+
+            <p>You want to fill out this form</p>
+
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="inputs">
+@*
+    Những trường input sẽ là chỗ đẩy dữ liệu cần bind về cho controller
+    asp-for: gán tên cho các trường dữ liệu để đẩy về controller
+*@
+            <input asp-for="UserName" type="email" placeholder="e-mail" autofocus />
+
+            <input asp-for="Password" type="password" placeholder="Password" />
+
+            <div class="checkboxy">
+                <input name="cecky" id="checky" value="1" type="checkbox" /><label class="terms">I accept the terms of use</label>
+            </div>
+
+            <button type="submit">SIGN UP FOR INVITE NOW</button>
+
+        </div>
+
+    </form>
+
+</div>
